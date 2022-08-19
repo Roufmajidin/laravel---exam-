@@ -6,6 +6,8 @@ use App\Models\Detail_soal;
 use App\Models\Mapel;
 use App\Models\Guru;
 use App\Models\Soal;
+use App\Models\Siswa;
+use App\Models\Siswa_ujian;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
@@ -81,5 +83,28 @@ class MapelController extends Controller
             ]
         );
         return (redirect('soal/' . $id));
+    }
+     public function asignSiswa($id)
+    {
+        $siswa = Siswa_ujian::where('mapel_id', $id)->get();
+        $mapel = Mapel::find($id);
+        $siswas = Siswa::get();
+
+        // dd($sis  wa);
+
+
+        return view('page.siswa_asignment', compact('siswa', 'mapel', 'siswas'));
+    }
+     public function asignSiswaPost(Request $request, $id)
+
+    {
+
+        Siswa_ujian::create(
+            [
+                'nama_siswa' => $request->nama_siswa,
+                'mapel_id' => $request->mapel_id,
+            ]
+        );
+        return (redirect('siswa_asigment/' . $id));
     }
 }
