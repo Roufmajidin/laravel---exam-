@@ -4,6 +4,7 @@
 
     <div class="table-responsive">
         <table class="table table-bordered" id="dataTable" width="90%" cellspacing="0">
+
             <thead class="">
                 <tr>
                     <th>No</th>

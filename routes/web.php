@@ -24,6 +24,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/mata_pelajaran', [App\Http\Controllers\MapelController::class, 'allMapel'])->name('index');
 Route::get('/soal/{id}', [App\Http\Controllers\MapelController::class, 'detailMapel'])->name('index');
 Route::get('/detail_soal/{id}', [App\Http\Controllers\MapelController::class, 'detailSoal']);
+Route::post('/tambahOpsi/{id}', [App\Http\Controllers\MapelController::class, 'tambahOpsi']);
 Route::post('/tambahSoal/{id}', [App\Http\Controllers\MapelController::class, 'tambahSoal']);
 // Route::get('/detail_soal', [App\Http\Controllers\MapelController::class, 'soal']);
 Route::post('/insert_opsi', [MapelController::class, 'InsertOpsi']);

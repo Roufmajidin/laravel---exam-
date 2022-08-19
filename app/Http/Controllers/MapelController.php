@@ -21,8 +21,10 @@ class MapelController extends Controller
     {
         $soal = Soal::with('detail_soal')->where('mapel_id', $id)->get();
         // dd($soal);
+        $mapel = Mapel::find($id);
+        // dd($mapel);
 
-        return view('page.soal', compact('soal'));
+        return view('page.soal', compact('soal','mapel'));
     }
     public function detailSoal($id)
     {
@@ -49,7 +51,7 @@ class MapelController extends Controller
     //     // return view('page.detail_soal', compact('detailsoal'));
 
     // }
-    public function tambahSoal(Request $request, $id)
+    public function tambahOpsi(Request $request, $id)
 
     {
 
@@ -63,5 +65,21 @@ class MapelController extends Controller
             ]
         );
         return (redirect('detail_soal/' . $id));
+    }
+    public function tambahSoal(Request $request, $id)
+
+    {
+
+        Soal::create(
+            [
+                'mapel_id' => $request->mapel_id,
+                'pertanyaan' => $request->pertanyaan,
+                'jawaban' => $request->jawaban,
+
+
+
+            ]
+        );
+        return (redirect('soal/' . $id));
     }
 }

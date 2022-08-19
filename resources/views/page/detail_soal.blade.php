@@ -24,7 +24,7 @@
                             <div class="modal-body">
                                 {{-- <p>bagian body modal.</p> --}}
                                 {{-- isi --}}
-                                <form class="form-row" action="/tambahSoal/{{$soal->id}}/" method="POST">
+                                <form class="form-row" action="/tambahOpsi/{{$soal->id}}/" method="POST">
                                     {{ csrf_field() }}
                                     <div class="row mb-3">
                                         <label for="email" class="col-md-4 col-form-label text-md-end">Masukkan
