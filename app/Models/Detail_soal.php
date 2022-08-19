@@ -7,5 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Detail_soal extends Model
 {
-    use HasFactory;
+    // use HasFactory;
+    protected $fillable = [
+        'soal_id',
+        'opsi',
+
+
+
+    ];
+
 }

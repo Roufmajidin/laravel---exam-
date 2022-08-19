@@ -362,6 +362,189 @@
     <!-- Page level custom scripts -->
     <script src="{{ asset('assets/js/demo/chart-area-demo.js') }}"></script>
     <script src="{{ asset('assets/js/demo/chart-pie-demo.js') }}"></script>
+    <script src="{{ asset('assets/js/custom.js') }}"></script>
+
+
+    {{-- custom js --}}
+    </script>  --}}
+
+{{-- <script>
+    let data = []
+
+    function ambilDataMasterItem(){
+        const url = "{{url('list_master_item') }}";
+        $.ajax({
+            url,
+            success:function(list_master_item){
+                console.log(list_master_item)
+                //variabel utk nampugn nilai
+                let tampilan = ``;
+                $("#table-list tbody").children().remove()
+
+                //looping
+                for(let i=0;i<list_master_item.length;i++){
+
+                    tampilan+= `
+                    <tr>
+                        <td>${list_master_item[i]. i++||'-'} </td>
+                        <td>${list_master_item[i]. nama||'-'} </td>
+                        <td>${list_master_item[i]. kelas||'-'} </td>
+                        <td>${list_master_item[i]. updated_at||'-'} </td>
+                    </tr>
+                    `
+                }
+                //panggil
+                $("#table-list tbody").append(tampilan)
+
+
+            },
+            error:function(e){
+                console.log(e)
+                alert("Terjadi Kesalahan")
+            }
+        })
+    }
+    ambilDataMasterItem()
+
+    //form submit
+    $("#form").on('submit', function(event){
+        event.preventDefault()
+        submitForm()
+    })
+
+    function submitForm(){
+        let form = $("form");
+         //post route WEB.PHP
+        const url = "{{url('master_item') }}";
+        $.ajax({
+            url,
+            method:"POST",
+            data:form.serialize(),
+            success:function(response){
+               ambilDataMasterItem()
+
+            },
+            error:function(err){
+                console.log(err)
+                alert("gagal menambahkan")
+            }
+        })
+    }
+    $(document).ready(function () {
+
+        $('body').on('click', '#editCompany', function (event) {
+
+            event.preventDefault();
+            var id = $(this).data('id');
+            $.get(id + '/edit', function (data) {
+                 //$('#userCrudModal').html("Edit category");
+                 //$('#submit').val("Detail Dosen");
+                    $('#practice_modal').modal('show');
+                    $('#color_id').val(data.data.id);
+                    $('#name').val(data.data.nama_dosen);
+                    $('#alamat').val(data.data.alamat);
+                    $('#tmpL').val(data.data.tempat_lahir);
+                    $('#NIDN').val(data.data.NIDN);
+
+
+
+                })
+        })
+
+        });
+
+</script> --}}
+
+<script>
+    let data = []
+
+    function getListMasterItem(){
+     event.preventDefault();
+            // var id = $(this).data('id');
+        const url = "{{url('detail_soal/') }}";
+        $.ajax({
+            url,
+            success:function(detail_soal){
+                console.log(detail_soal)
+                //variabel utk nampugn nilai
+                let tampilan = ``;
+                $("#table-list tbody").children().remove()
+
+                //looping
+                for(let i=0;i<detail_soal.length;i++){
+
+                    tampilan+= `
+                    <tr>
+                        <td>${detail_soal[i]. i++||'-'} </td>
+                        <td>${detail_soal[i]. opsi||'-'} </td>
+
+                    </tr>
+                    `
+                }
+                //panggil
+                $("#table-list tbody").append(tampilan)
+
+
+            },
+            error:function(e){
+                console.log(e)
+                alert("Terjadi Kesalahan sd")
+            }
+        })
+    }
+    getListMasterItem()
+
+    //form submit
+    $("#form").on('submit', function(event){
+        event.preventDefault()
+        submitForm()
+    })
+
+    function submitForm(){
+        let form = $("form");
+         //post route WEB.PHP
+        const url = "{{url('insert_opsi') }}";
+        $.ajax({
+            url,
+            method:"POST",
+            data:form.serialize(),
+            success:function(response){
+               ambilDataMasterItem()
+
+            },
+            error:function(err){
+                console.log(err)
+                alert("gagal menambahkan")
+            }
+        })
+    }
+    $(document).ready(function () {
+
+        $('body').on('click', '#editCompany', function (event) {
+
+            event.preventDefault();
+            var id = $(this).data('id');
+            $.get(id + '/edit', function (data) {
+                 //$('#userCrudModal').html("Edit category");
+                 //$('#submit').val("Detail Dosen");
+                    $('#practice_modal').modal('show');
+                    $('#color_id').val(data.data.id);
+                    $('#name').val(data.data.nama_dosen);
+                    $('#alamat').val(data.data.alamat);
+                    $('#tmpL').val(data.data.tempat_lahir);
+                    $('#NIDN').val(data.data.NIDN);
+
+
+
+                })
+        })
+
+        });
+
+</script>
+
+
+    {{-- d --}}
 
 </body>
 
