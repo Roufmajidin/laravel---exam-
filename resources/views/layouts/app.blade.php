@@ -58,12 +58,9 @@
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="mata_plajaran" data-toggle="collapse" data-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-cog"></i>
-                    <span>Mata Pelajaran</span>
-                </a>
-
+                <a class="nav-link" href="/mata_pelajaran">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Mata Pelajaran</span></a>
             </li>
 
             <!-- Nav Item - Utilities Collapse Menu -->
@@ -312,7 +309,7 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-4 text-gray-800">Blank Page</h1>
+                    <h1 class="h3 mb-4 text-gray-800">@yield('title')</h1>
                 @yield('content')
 
                 </div>

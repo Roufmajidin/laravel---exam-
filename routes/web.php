@@ -20,4 +20,6 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/mata_pelajaran', [App\Http\Controllers\MapelController::class, 'index'])->name('index');
+Route::get('/mata_pelajaran', [App\Http\Controllers\MapelController::class, 'allMapel'])->name('index');
+Route::get('/soal/{id}', [App\Http\Controllers\MapelController::class, 'detailMapel'])->name('index');
+Route::get('/detail_soal/{id}', [App\Http\Controllers\MapelController::class, 'detailSoal'])->name('index');

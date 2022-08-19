@@ -10,8 +10,10 @@ class Mapel extends Model
     // use HasFactory;
     public function soal()
     {
-    return $this->hasMany(Soal::class, 'mapel_id', 'id');
-
-
+        return $this->belongsTo(Soal::class, 'mapel_id', 'id');
+    }
+    public function guru()
+    {
+        return $this->hasMany(Guru::class, 'mapel_id', 'id');
     }
 }
