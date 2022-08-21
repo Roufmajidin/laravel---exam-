@@ -13,10 +13,10 @@ class Siswa extends Model
     protected $fillable = [
         'nama_siswa',
     ];
-    //  public function mapel()
-    // {
-    //     return $this->belongsToMany(Mapel::class);
-    // }
+     public function mapel()
+    {
+        return $this->hasMany(Mapel::class);
+    }
 
 
 

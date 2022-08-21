@@ -30,3 +30,7 @@ Route::get('/siswa_asigment/{id}', [App\Http\Controllers\MapelController::class,
 Route::post('/tambahAssesment/{id}', [App\Http\Controllers\MapelController::class, 'asignSiswaPost']);
 // Route::get('/detail_soal', [App\Http\Controllers\MapelController::class, 'soal']);
 Route::post('/insert_opsi', [MapelController::class, 'InsertOpsi']);
+// siswa
+Route::get('/siswa-mapel/', [App\Http\Controllers\SiswaController::class, 'siswaMapel']);
+Route::post('/jawabanStartUjian/{id}', [App\Http\Controllers\SiswaController::class, 'jawabanStartUjian']);
+Route::post('/formExam/{id}', [App\Http\Controllers\SiswaController::class, 'formExam']);

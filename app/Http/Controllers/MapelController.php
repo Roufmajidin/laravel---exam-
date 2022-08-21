@@ -22,11 +22,12 @@ class MapelController extends Controller
     public function detailMapel($id)
     {
         $soal = Soal::with('detail_soal')->where('mapel_id', $id)->get();
+        $detail_soal = Detail_soal::where('soal_id', $id)->get();
         // dd($soal);
         $mapel = Mapel::find($id);
-        // dd($mapel);
+        // dd($soal);
 
-        return view('page.soal', compact('soal','mapel'));
+        return view('page.coba', compact('detail_soal','soal', 'mapel'));
     }
     public function detailSoal($id)
     {
@@ -44,15 +45,7 @@ class MapelController extends Controller
         Detail_Soal::create(request()->except(['_token']));
         return response()->Json(true);
     }
-    // public function getListMasterItem($id)
-    // {
-    //     // $detailsoal = Detail_soal::where('soal_id', $id)->get();
 
-    //     return Detail_soal::where('soal_id', $id)->get();
-    //     // return Detail_soal::all();
-    //     // return view('page.detail_soal', compact('detailsoal'));
-
-    // }
     public function tambahOpsi(Request $request, $id)
 
     {

@@ -12,6 +12,9 @@ class Soal extends Model
         'mapel_id',
         'jawaban',
         'pertanyaan',
+        'opsi_a',
+        'opsi_b',
+        'opsi_c',
 
 
 

@@ -13,5 +13,10 @@ class Siswa_ujian extends Model
     protected $fillable = [
         'nama_siswa',
         'mapel_id',
+        'status_ujian',
     ];
+      public function mapel()
+    {
+        return $this->belongsTo(Mapel::class);
+    }
 }
